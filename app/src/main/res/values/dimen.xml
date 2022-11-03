@@ -3,5 +3,6 @@
     <!--  item_view 간의 양 옆 여백을 상쇄할 값   -->
     <dimen name="offsetBetweenPages">40dp</dimen>
     <!--  각 페이지의 양 옆 margin  -->
-    <dimen name="pageMargin">50dp</dimen>
+    <dimen name="pageMargin">100dp</dimen>
+    <dimen name="pageWidth">130dp</dimen>
 </resources>

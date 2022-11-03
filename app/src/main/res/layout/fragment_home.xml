@@ -27,10 +27,26 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             app:layout_constraintBottom_toTopOf="@id/tv_category"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_place" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#00ff0000"
+            app:layout_constraintBottom_toTopOf="@id/tv_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_place"
+            app:layout_constraintTop_toBottomOf="@id/viewPager"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
 
         <TextView
             android:id="@+id/tv_category"
@@ -176,6 +192,17 @@
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_offer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="추천"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tv_place"
+            app:layout_constraintTop_toBottomOf="@id/layout_category" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

@@ -10,4 +10,6 @@
     <color name="et_loginBox">#FEFCFC</color>
     <color name="background">#EDEDED</color>
     <color name="main_color">#9650FA</color>
+    <color name="selected_dot">#897CFF</color>
+    <color name="default_dot">#B9B1FF</color>
 </resources>
