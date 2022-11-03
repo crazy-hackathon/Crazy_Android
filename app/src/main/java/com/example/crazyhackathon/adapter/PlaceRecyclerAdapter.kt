@@ -1,9 +1,11 @@
 package com.example.crazyhackathon.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.crazyhackathon.DetailActivity
 import com.example.crazyhackathon.data.PlaceData
 import com.example.crazyhackathon.databinding.OfferListBinding
 
@@ -15,6 +17,11 @@ class PlaceRecyclerAdapter(val context: Context):
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: PlaceData) {
             binding.title.text = data.title
+            binding.imgList.setOnClickListener {
+                Intent(context, DetailActivity::class.java).apply {
+                    context.startActivity(this)
+                }
+            }
         }
     }
 
