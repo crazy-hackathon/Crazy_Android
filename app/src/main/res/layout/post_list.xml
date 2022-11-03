@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/postLayout"
+        android:background="@drawable/et_roundbox"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tree"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="두류공원 다녀온 썰 푼다"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/img_main"
+            app:layout_constraintStart_toStartOf="@id/img_main"
+            app:layout_constraintTop_toBottomOf="@id/img_main" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_main"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="5dp"
+                android:text="고용빈"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <ImageView
+                android:id="@+id/img_location"
+                android:src="@drawable/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_name"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/tv_location"
+                android:text="대구 두류공원"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/img_location"
+                app:layout_constraintBottom_toBottomOf="@id/img_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_heart"
+                android:src="@drawable/heart"
+                app:layout_constraintTop_toBottomOf="@id/img_location"
+                app:layout_constraintStart_toStartOf="@id/img_location"
+                android:layout_marginTop="12dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/tv_heart"
+                android:text="18명이 좋아합니다"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/img_heart"
+                app:layout_constraintBottom_toBottomOf="@id/img_heart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/img_clock"
+                android:src="@drawable/clock"
+                app:layout_constraintStart_toStartOf="@id/img_location"
+                app:layout_constraintTop_toBottomOf="@id/img_heart"
+                android:layout_marginTop="12dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+            <TextView
+                android:id="@+id/tv_clock"
+                android:text="2022/10/12"
+                android:textSize="12dp"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/tv_name"
+                app:layout_constraintTop_toTopOf="@id/img_clock"
+                app:layout_constraintBottom_toBottomOf="@id/img_clock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
