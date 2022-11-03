@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crazyhackathon.DetailActivity
 import com.example.crazyhackathon.data.PlaceData
@@ -19,8 +20,8 @@ class PlaceRecyclerAdapter(val context: Context):
             binding.title.text = data.title
             binding.imgList.setOnClickListener {
                 Intent(context, DetailActivity::class.java).apply {
-                    context.startActivity(this)
-                }
+                    putExtra("data", data)
+                }.run { context.startActivity(this) }
             }
         }
     }

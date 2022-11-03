@@ -7,19 +7,6 @@
     android:background="@color/background"
     tools:context=".DetailActivity">
 
-    <TextView
-        android:id="@+id/tv_top"
-        android:layout_width="0dp"
-        android:layout_height="64dp"
-        android:background="@drawable/topbar_box"
-        android:gravity="center"
-        android:text="Crazy"
-        android:textColor="@color/black"
-        android:textSize="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -39,13 +26,13 @@
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/place_box"
             android:paddingVertical="6dp"
-            android:paddingStart="16dp"
+            android:paddingStart="20dp"
             android:text="두류공원"
             android:textColor="@color/white"
-            android:textSize="40sp"
+            android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="@id/img_main"
             app:layout_constraintStart_toStartOf="@id/img_main"
             app:layout_constraintTop_toBottomOf="@id/img_main" />
@@ -54,19 +41,20 @@
             android:id="@+id/tv_heart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="10dp"
             android:text="100"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/tv_title"
-            app:layout_constraintEnd_toStartOf="@id/img_heart" />
+            app:layout_constraintEnd_toStartOf="@id/img_heart"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
 
         <ImageView
             android:id="@+id/img_heart"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="14dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
             android:scaleType="centerInside"
             android:src="@drawable/heart"
             app:layout_constraintBottom_toBottomOf="@id/tv_title"
@@ -78,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="21dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:text="83타워 및 스포츠 시설이 있는 공원"
             android:textColor="@color/black"
             android:textSize="12sp"
@@ -104,7 +92,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/et_roundbox"
-            android:paddingStart="12dp"
+            android:paddingHorizontal="12dp"
             android:paddingTop="5dp"
             android:scrollbars="vertical"
             android:text="설명임.."
