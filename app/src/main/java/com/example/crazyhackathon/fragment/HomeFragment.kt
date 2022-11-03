@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager2.widget.ViewPager2
 import com.example.crazyhackathon.R
+import com.example.crazyhackathon.adapter.ViewPagerAdapter
 import com.example.crazyhackathon.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -23,6 +25,16 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.viewPager.adapter = ViewPagerAdapter(getIdolList()) // 어댑터 생성
+        binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL // 방향을 가로로
+    }
+
+    private fun getIdolList(): ArrayList<Int> {
+        return arrayListOf<Int>(R.drawable.open, R.drawable.close, R.drawable.people)
     }
 
 }
