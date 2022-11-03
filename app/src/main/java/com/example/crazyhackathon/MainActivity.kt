@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import com.example.crazyhackathon.databinding.ActivityMainBinding
 import com.example.crazyhackathon.fragment.HomeFragment
+import com.example.crazyhackathon.fragment.PostFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.page_search -> {
-
+                supportFragmentManager.beginTransaction().replace(binding.bodyLayout.id, PostFragment()).commit()
             }
             R.id.page_home -> {
                 supportFragmentManager.beginTransaction().replace(binding.bodyLayout.id, HomeFragment()).commit()
