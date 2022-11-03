@@ -203,6 +203,16 @@
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@id/tv_place"
             app:layout_constraintTop_toBottomOf="@id/layout_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/layout_category"
+            app:layout_constraintStart_toStartOf="@id/layout_category"
+            app:layout_constraintTop_toBottomOf="@id/tv_offer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

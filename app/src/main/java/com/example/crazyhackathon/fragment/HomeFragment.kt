@@ -5,16 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.crazyhackathon.R
+import com.example.crazyhackathon.adapter.PlaceRecyclerAdapter
 import com.example.crazyhackathon.adapter.ViewPagerAdapter
+import com.example.crazyhackathon.data.PlaceData
 import com.example.crazyhackathon.databinding.FragmentHomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-
+    private var mDatas = mutableListOf<PlaceData>(
+        PlaceData("두류공원", "ㅎㅇ", "hello", 20),
+        PlaceData("ㅎㅇ공원", "ㅎㅇ", "hello", 20)
+    )
     private val MIN_SCALE = 0.85f
     private val MIN_ALPHA = 0.5f
 
@@ -35,6 +42,19 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewPagerSetting()
+        initDataRecyclerView()
+        addDataRecyclerView()
+    }
+
+    private fun initDataRecyclerView() {
+        val adapter = PlaceRecyclerAdapter(requireContext())
+        adapter.dataList = mDatas
+        binding.recycler.adapter = adapter
+        binding.recycler.layoutManager = GridLayoutManager(requireContext(), 2)
+    }
+
+    private fun addDataRecyclerView() {
+        //TODO 서버값
     }
 
     private fun viewPagerSetting() {
