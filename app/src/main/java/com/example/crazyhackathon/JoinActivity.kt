@@ -1,5 +1,6 @@
 package com.example.crazyhackathon
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,13 +8,17 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.crazyhackathon.data.UserData
+import com.example.crazyhackathon.data.JoinData
 import com.example.crazyhackathon.databinding.ActivityJoinBinding
+import com.example.crazyhackathon.retrofit.RetrofitBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityJoinBinding
-    private var data: UserData = UserData("", "", "", "", 0)
+    private var age_cnt = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,25 +49,40 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this, "비밀번호를 입력해주세요!", Toast.LENGTH_SHORT).show()
             binding.etPw.requestFocus()
         } else {
-            saveData()
+            val name = binding.etName.text.toString()
+            val id = binding.etId.text.toString()
+            val pw = binding.etPw.text.toString()
+            val age = age_cnt
+            val gender = if (binding.checkMale.isChecked)  "male" else "female"
+            val data = JoinData(age, gender, id, name, pw)
+            JoinPost(data)
         }
     }
 
-    private fun saveData() {
-        data.name = binding.etName.text.toString()
-        data.id = binding.etId.text.toString()
-        data.pw = binding.etPw.text.toString()
-        if (binding.checkMale.isChecked){
-            data.gender = "male"
-        } else if(binding.checkFemale.isChecked){
-            data.gender = "female"
-        }
-        joinPost(data)
-        Log.d("test", data.toString())
+    private fun JoinPost(joinData: JoinData) {
+        RetrofitBuilder.api.JoinPost(joinData).enqueue(object :
+            Callback<Void> {
+            override fun onResponse(
+                call: Call<Void>,
+                response: Response<Void>,
+            ) {
+                Log.d("testasd", response.toString())
+                if (response.isSuccessful) {
+                    intent()
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Log.d("testasd", "실패$t")
+            }
+
+        })
     }
 
-    private fun joinPost(userData: UserData) {
-        //TODO API 연결
+    private fun intent() {
+        val intent = Intent(this, LoginActivity::class.java)
+        finishAffinity()
+        startActivity(intent)
     }
 
     private fun settingSpinner() {
@@ -76,35 +96,35 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
                 binding.spinnerAge.prompt = "나이"
                 when(p2) {
                     0 -> {
-                        data.age = 1
+                        age_cnt = 10
                     }
                     1 -> {
                         //10
-                        data.age = 2
+                        age_cnt = 20
                     }
                     2 -> {
                         //20
-                        data.age = 3
+                        age_cnt = 30
                     }
                     3 -> {
                         //30
-                        data.age = 4
+                        age_cnt = 40
                     }
                     4 -> {
                         //40
-                        data.age = 5
+                        age_cnt = 50
                     }
                     5 -> {
                         //50
-                        data.age = 6
+                        age_cnt = 60
                     }
                     6 -> {
                         //60
-                        data.age = 7
+                        age_cnt = 70
                     }
                     7 -> {
                         //70
-                        data.age = 8
+                        age_cnt = 80
                     }
                 }
             }
