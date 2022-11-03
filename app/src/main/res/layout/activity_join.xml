@@ -135,6 +135,7 @@
             android:layout_width="90dp"
             android:layout_height="0dp"
             android:background="@drawable/spinner_base"
+            android:spinnerMode="dialog"
             app:layout_constraintBottom_toBottomOf="@id/check_male"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/check_male" />
