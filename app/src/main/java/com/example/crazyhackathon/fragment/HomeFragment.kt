@@ -58,7 +58,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun viewPagerSetting() {
-        binding.viewPager.adapter = ViewPagerAdapter(getIdolList()) // 어댑터 생성
+        binding.viewPager.adapter = ViewPagerAdapter(getIdolList(), requireContext()) // 어댑터 생성
         binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL // 방향을 가로로
         binding.viewPager.setPageTransformer(ZoomOutPageTransformer())
         val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin)
@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.viewPager.offscreenPageLimit = 1 // 몇 개의 페이지를 미리 로드 할 것 인지
-        binding.viewPager.adapter = ViewPagerAdapter(getIdolList())
+        binding.viewPager.adapter = ViewPagerAdapter(getIdolList(), requireContext())
         binding.viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         TabLayoutMediator(binding.tabLayout, binding.viewPager) {tap, position ->
             //Some implementation
