@@ -3,6 +3,7 @@ package com.example.crazyhackathon.retrofit
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object RetrofitBuilder {
@@ -16,7 +17,8 @@ object RetrofitBuilder {
         val retrofit = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl("http://" + serverIP)
-            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            //.addConverterFactory(ScalarsConverterFactory.create())
             .build()
 
         api = retrofit.create(API::class.java)

@@ -8,14 +8,16 @@ import com.example.crazyhackathon.databinding.ActivityDetailBinding
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
-    var dataList = mutableListOf<PlaceData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        settingView()
+        binding.tvTitle.text = intent.getStringExtra("title")
+        binding.tvHead.text = intent.getStringExtra("head")
+        binding.tvBody.text = intent.getStringExtra("body")
+        binding.tvHeart.text = intent.getStringExtra("heart")
     }
 
     private fun settingView() {

@@ -4,5 +4,5 @@ data class PlaceData(
     var title: String,
     var head: String,
     var body: String,
-    var heart: Int
+    var heart: String
 ): java.io.Serializable

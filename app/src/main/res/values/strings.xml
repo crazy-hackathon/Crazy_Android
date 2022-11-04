@@ -2,4 +2,7 @@
     <string name="app_name">CrazyHackathon</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test_body_text">두류공원은 대한민국 대구광역시 달서구 두류동과 성당동에 위치한 도시근린공원이다.
+        대구문화예술회관 뒤편의 금봉산과 이월드가 세워진 두류산을 중심으로 형성되어 있고, 1965년 2월 공원으로 지정되었다.
+        본격적인 개발은 1977년에 이루어졌고 면적은 1,653,965 m²이다. 한편, 1986년 3월 22일과 3월 23일에 이곳 운동장에서 86 춘계 축구대제전 경기가 열리기도 했다.</string>
 </resources>

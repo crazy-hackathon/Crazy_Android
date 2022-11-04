@@ -20,7 +20,10 @@ class PlaceRecyclerAdapter(val context: Context):
             binding.title.text = data.title
             binding.imgList.setOnClickListener {
                 Intent(context, DetailActivity::class.java).apply {
-                    putExtra("data", data)
+                    putExtra("title", data.title)
+                    putExtra("head", data.head)
+                    putExtra("body", data.body)
+                    putExtra("heart", data.heart)
                 }.run { context.startActivity(this) }
             }
         }
