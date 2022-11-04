@@ -7,6 +7,7 @@ import android.view.View
 import com.example.crazyhackathon.databinding.ActivityMainBinding
 import com.example.crazyhackathon.fragment.HomeFragment
 import com.example.crazyhackathon.fragment.PostFragment
+import com.example.crazyhackathon.fragment.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 supportFragmentManager.beginTransaction().replace(binding.bodyLayout.id, HomeFragment()).commit()
             }
             R.id.page_my -> {
-
+                supportFragmentManager.beginTransaction().replace(binding.bodyLayout.id, ProfileFragment()).commit()
             }
         }
         return true
