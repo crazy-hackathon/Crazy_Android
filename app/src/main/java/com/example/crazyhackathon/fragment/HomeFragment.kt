@@ -19,7 +19,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private var mDatas = mutableListOf<PlaceData>(
-        PlaceData("두류공원", "83타워 및 스포츠 시설이 있는 공원", resources.getString(R.string.test_body_text), "20"),
+        PlaceData("두류공원", "83타워 및 스포츠 시설이 있는 공원", "fdfsdfsdfdsfds", "20"),
         PlaceData("김광석거리", "김광석거리", "노래도 나오고 옛날 분위기가 나서 추억을 되살리기 좋았습니다", "49"),
         PlaceData( "낙동강 수련원", "학생 수련원", "너무 재밌고 좋았습니다.", "50")
     )

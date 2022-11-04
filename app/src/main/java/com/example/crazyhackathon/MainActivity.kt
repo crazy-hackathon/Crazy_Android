@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
         supportFragmentManager.beginTransaction().replace(binding.bodyLayout.id, HomeFragment()).commit()
         binding.bottomNavigation.selectedItemId = R.id.page_home
+        binding.logo.bringToFront()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
