@@ -5,9 +5,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.crazyhackathon.DetailActivity
 import com.example.crazyhackathon.R
+import com.example.crazyhackathon.data.PlaceData
+import com.example.crazyhackathon.data.PostData
 
 class ViewPagerAdapter(placeList: ArrayList<Int>, val context: Context) : RecyclerView.Adapter<ViewPagerAdapter.PagerViewHolder>() {
     var item = placeList
@@ -29,7 +32,5 @@ class ViewPagerAdapter(placeList: ArrayList<Int>, val context: Context) : Recycl
         (LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)){
 
         val place = itemView.findViewById<ImageView>(R.id.imgList)
-
-
     }
 }

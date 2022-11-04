@@ -25,11 +25,6 @@ class HomeFragment : Fragment() {
     private val MIN_SCALE = 0.85f
     private val MIN_ALPHA = 0.5f
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

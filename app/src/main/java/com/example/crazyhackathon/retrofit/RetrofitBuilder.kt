@@ -1,29 +1,35 @@
 package com.example.crazyhackathon.retrofit
 
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object RetrofitBuilder {
-    //val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
+    val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
     var api: API
     private var serverIP: String = "172.20.10.3:8080/"
 
-    init {
-        val okHttpClient = OkHttpClient().newBuilder()
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .addInterceptor(AuthInterceptor())
-            .build()
+    var gson = GsonBuilder().setLenient().create();
 
+    init {
         val retrofit = Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl("http://" + serverIP)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
             .build()
 
         api = retrofit.create(API::class.java)
     }
+//    init {
+//        val retrofit = Retrofit.Builder()
+//            .client(okHttpClient)
+//            .baseUrl("http://" + serverIP)
+////            .addConverterFactory(GsonConverterFactory.create(gson))
+//            .addConverterFactory(ScalarsConverterFactory.create())
+//            .build()
+//
+//
+//        api = retrofit.create(API::class.java)
+//    }
 }

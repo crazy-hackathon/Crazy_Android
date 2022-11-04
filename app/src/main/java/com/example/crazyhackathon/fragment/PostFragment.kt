@@ -19,10 +19,6 @@ class PostFragment : Fragment() {
     private var mDatas = mutableListOf<PostData>(
         PostData("두류공원 썰 푼다", "고용빈", "대구 두류공원", 20, 20221012)
     )
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

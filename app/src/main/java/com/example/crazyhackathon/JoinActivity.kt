@@ -1,6 +1,5 @@
 package com.example.crazyhackathon
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.crazyhackathon.data.JoinData
 import com.example.crazyhackathon.data.Gender
+import com.example.crazyhackathon.data.JoinResponse
 import com.example.crazyhackathon.databinding.ActivityJoinBinding
 import com.example.crazyhackathon.retrofit.RetrofitBuilder
 import retrofit2.Call
@@ -63,28 +63,22 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun JoinPost(joinData: JoinData) {
         RetrofitBuilder.api.JoinPost(joinData).enqueue(object :
-            Callback<Void> {
+            Callback<JoinResponse> {
             override fun onResponse(
-                call: Call<Void>,
-                response: Response<Void>,
+                call: Call<JoinResponse>,
+                response: Response<JoinResponse>,
             ) {
                 Log.d("testasd", response.toString())
                 if (response.isSuccessful) {
-                    intent()
+                    finish()
                 }
             }
 
-            override fun onFailure(call: Call<Void>, t: Throwable) {
-                Log.d("testasd", "실패$t")
+            override fun onFailure(call: Call<JoinResponse>, t: Throwable) {
+                Log.d("testasd", "실패 : $t")
             }
 
         })
-    }
-
-    private fun intent() {
-        val intent = Intent(this, LoginActivity::class.java)
-        finishAffinity()
-        startActivity(intent)
     }
 
     private fun settingSpinner() {
