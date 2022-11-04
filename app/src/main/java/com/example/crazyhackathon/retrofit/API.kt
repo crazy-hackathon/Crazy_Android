@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface API {
-    @POST("autn/sign-up")
+    @POST("auth/sign-up")
     fun JoinPost(@Body joinData: JoinData) : Call<Void>
 }

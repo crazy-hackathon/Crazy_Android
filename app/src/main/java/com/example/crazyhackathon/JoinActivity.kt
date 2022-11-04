@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.crazyhackathon.data.JoinData
+import com.example.crazyhackathon.data.Gender
 import com.example.crazyhackathon.databinding.ActivityJoinBinding
 import com.example.crazyhackathon.retrofit.RetrofitBuilder
 import retrofit2.Call
@@ -53,8 +54,9 @@ class JoinActivity : AppCompatActivity(), View.OnClickListener {
             val id = binding.etId.text.toString()
             val pw = binding.etPw.text.toString()
             val age = age_cnt
-            val gender = if (binding.checkMale.isChecked)  "male" else "female"
+            val gender = if (binding.checkMale.isChecked)  Gender.MALE else Gender.FEMALE
             val data = JoinData(age, gender, id, name, pw)
+            Log.d("testasd", data.toString())
             JoinPost(data)
         }
     }

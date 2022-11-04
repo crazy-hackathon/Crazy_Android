@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 object RetrofitBuilder {
     //val okHttpClient = OkHttpClient.Builder().addInterceptor(AuthInterceptor()).build()
     var api: API
-    private var serverIP: String = "192.168.0.32:8080/"
+    private var serverIP: String = "172.20.10.3:8080/"
 
     init {
         val okHttpClient = OkHttpClient().newBuilder()
