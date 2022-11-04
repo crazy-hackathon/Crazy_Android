@@ -7,15 +7,27 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="89dp"
+        android:src="@drawable/only_logo"
+        app:layout_constraintBottom_toBottomOf="@id/tv_top"
+        app:layout_constraintStart_toStartOf="@id/tv_top"
+        app:layout_constraintTop_toTopOf="@id/tv_top" />
+
     <TextView
         android:id="@+id/tv_top"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:background="@drawable/topbar_box"
         android:gravity="center"
-        android:text="Crazy"
+        android:text="가보자고"
         android:textColor="@color/black"
-        android:textSize="28dp"
+        android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +45,8 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation"
-        app:labelVisibilityMode="unlabeled"
         android:background="@drawable/bottom_navigation_box"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
