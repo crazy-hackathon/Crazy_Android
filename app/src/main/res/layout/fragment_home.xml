@@ -109,7 +109,7 @@
                     android:layout_height="48dp"
                     android:background="@drawable/imgbtn_round"
                     android:scaleType="centerInside"
-                    android:src="@drawable/childplay" />
+                    android:src="@drawable/art" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                     android:layout_height="48dp"
                     android:background="@drawable/imgbtn_round"
                     android:scaleType="centerInside"
-                    android:src="@drawable/childplay" />
+                    android:src="@drawable/activity" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -157,7 +157,7 @@
                     android:layout_height="48dp"
                     android:background="@drawable/imgbtn_round"
                     android:scaleType="centerInside"
-                    android:src="@drawable/childplay" />
+                    android:src="@drawable/history" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -181,7 +181,7 @@
                     android:layout_height="48dp"
                     android:background="@drawable/imgbtn_round"
                     android:scaleType="centerInside"
-                    android:src="@drawable/childplay" />
+                    android:src="@drawable/museum" />
 
                 <TextView
                     android:layout_width="match_parent"

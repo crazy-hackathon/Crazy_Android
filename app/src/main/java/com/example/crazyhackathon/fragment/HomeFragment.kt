@@ -48,6 +48,12 @@ class HomeFragment : Fragment() {
         binding.recycler.layoutManager = GridLayoutManager(requireContext(), 2)
     }
 
+    private fun selectCategory() {
+        binding.btnChild.setOnClickListener {
+
+        }
+    }
+
     private fun addDataRecyclerView() {
         //TODO 서버값
     }
@@ -74,7 +80,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getIdolList(): ArrayList<Int> {
-        return arrayListOf<Int>(R.drawable.tree, R.drawable.close, R.drawable.people)
+        return arrayListOf<Int>(R.drawable.tree, R.drawable.close, R.drawable.people, R.drawable.open, R.drawable.home)
     }
 
     inner class ZoomOutPageTransformer : ViewPager2.PageTransformer {
