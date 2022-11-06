@@ -37,6 +37,8 @@ class UploadActivity : AppCompatActivity(), View.OnClickListener {
                     binding.etPost.requestFocus()
                 } else {
                     val data = PostData(binding.etTitle.text.toString(), "test123", binding.etLocation.text.toString(), 0,20221012)
+                    Toast.makeText(this, "등록되었습니다.", Toast.LENGTH_SHORT).show()
+                    //TODO 서버 연결
                     finish()
                 }
             }
